@@ -96,6 +96,16 @@ cc_library(
 )
 
 proto_library(
+    name = "profile_proto",
+    srcs = ["profile.proto"]
+)
+
+cc_proto_library(
+    name = "profile_cc_proto",
+    deps = [":profile_proto"]
+)
+
+proto_library(
     name = "matcher_test_messages_proto",
     srcs = ["testdata/matcher_test_messages.proto"],
 )

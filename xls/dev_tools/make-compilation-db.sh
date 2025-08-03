@@ -50,9 +50,9 @@ BAZEL_OPTS="-c opt --remote_download_outputs=all"
 
 # Create compilation DB. Command 'compilation-db' creates a huge *.json file,
 # but compile_flags.txt is perfectly sufficient and easier for tools to use.
-"${BANT}" compile-flags > compile_flags.txt
+"${BANT}" compilation-db > compile_commands.json
 
 # If there are two styles of comp-dbs, tools might have issues. Warn user.
-if [ -r compile_commands.json ]; then
-  echo -e "\n\033[1;31mSuggest to remove old compile_commands.json to not interfere with compile_flags.txt\033[0m\n"
-fi
+# if [ -r compile_commands.json ]; then
+#   echo -e "\n\033[1;31mSuggest to remove old compile_commands.json to not interfere with compile_flags.txt\033[0m\n"
+# fi

@@ -197,3 +197,19 @@ py_binary(
         "@abseil-py//absl/flags",
     ],
 )
+
+cc_library(
+    name = "passes_profile",
+    srcs = ["passes_profile.cc"],
+    hdrs = ["passes_profile.h"],
+    deps = [
+        "//xls/common:profile_cc_proto",
+        "//xls/common:module_initializer",
+        "@com_google_absl//absl/flags:flag",
+        "@com_google_absl//absl/log",
+        "//xls/common/file:filesystem",
+        "@com_google_absl//absl/container:flat_hash_map",
+        "@com_google_absl//absl/container:flat_hash_set",
+        "@cppitertools",
+    ]
+)
